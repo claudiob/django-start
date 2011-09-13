@@ -27,7 +27,7 @@ def copy_template(src, dest, replace=None):
             if subdir.startswith('.'):
                 del dirs[i]
         for filename in files:
-            if (filename.startswith('.startproject') or
+            if (filename.startswith('.djangostart') or
                 filename.endswith('.pyc')):
                 continue
             src_file_path = os.path.join(path, filename)
@@ -75,7 +75,7 @@ def copy_template_file(src, dest, replace=None):
 
 def get_boilerplate(path, project_name):
     """
-    Look for a ``.startproject_boilerplate`` file the given path and parse it.
+    Look for a ``.djangostart_boilerplate`` file the given path and parse it.
     
     Return a list of 3-part tuples, each containing a boilerplate variable,
     optional description and default value.
@@ -85,7 +85,7 @@ def get_boilerplate(path, project_name):
     
     """
     defaults = {}
-    defaults_path = os.path.join(path, '.startproject_defaults')
+    defaults_path = os.path.join(path, '.djangostart_defaults')
     if os.path.isfile(defaults_path):
         defaults_file = open(defaults_path, 'r')
         for line in defaults_file:
@@ -94,7 +94,7 @@ def get_boilerplate(path, project_name):
                 var, default = match.groups()
                 defaults[var] = default
     boilerplate = []
-    boilerplate_path = os.path.join(path, '.startproject_boilerplate')
+    boilerplate_path = os.path.join(path, '.djangostart_boilerplate')
     if os.path.isfile(boilerplate_path):
         boilerplate_file = open(boilerplate_path, 'r')
         for line in boilerplate_file:

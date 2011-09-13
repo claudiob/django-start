@@ -1,4 +1,4 @@
-from django_startproject import utils
+from django_start import utils
 import optparse
 import os
 import sys
@@ -44,4 +44,5 @@ def start_project():
             value = raw_input(prompt) or default
         replace[var] = value
 
+    import pdb; pdb.set_trace()
     utils.copy_template(src, dest, replace)

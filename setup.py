@@ -9,7 +9,7 @@ finally:
     README_FILE.close()
 
 ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
-DATA_DIR = os.path.join(ROOT_DIR, 'django_startproject', 'project_template')
+DATA_DIR = os.path.join(ROOT_DIR, 'django_start', 'project_template')
 STARTPROJECT_DATA = []
 for path, dirs, filenames in os.walk(DATA_DIR):
     # Ignore directories that start with '.'
@@ -22,16 +22,16 @@ for path, dirs, filenames in os.walk(DATA_DIR):
     STARTPROJECT_DATA.append(os.path.join('project_template', path, '.*'))
 
 
-setup(name='django-startproject',
-      version='1.0a',
-      author='Lincoln Loop',
-      author_email='info@lincolnloop.com',
-      description=('Create a Django project layout based on Lincoln Loop '
-                     'best practices.'),
+setup(name='django-start',
+      version='0.1',
+      author='Claudio Baccigalupo',
+      author_email='claudio.baccigalupo@ff0000.com',
+      description=('Create a Django project based on FF0000 best practices.'),
+      url='http://github.com/claudiob/django-start/',
       long_description=LONG_DESCRIPTION,
-      packages=['django_startproject'],
-      package_data={'django_startproject': STARTPROJECT_DATA},
-      scripts=['bin/django-startproject.py'],
+      packages=['django_start'],
+      package_data={'django_start': STARTPROJECT_DATA},
+      scripts=['bin/django-start.py'],
       classifiers=[
           'Development Status :: 3 - Alpha',
           'Environment :: Web Environment',
