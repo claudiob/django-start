@@ -1,3 +1,4 @@
 *.pyc
 django_start.egg-info
 build
+dist

@@ -44,5 +44,4 @@ def start_project():
             value = raw_input(prompt) or default
         replace[var] = value
 
-    import pdb; pdb.set_trace()
     utils.copy_template(src, dest, replace)
