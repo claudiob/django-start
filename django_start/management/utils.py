@@ -47,7 +47,7 @@ def copy_template(src, dest, replace=None):
 
 def copy_template_file(src, dest, replace=None):
     """
-    Copy a source file to a new destination file.
+    Copy a source file to a new destination file, maintaining its permissions.
     
     To replace boilerplate strings in the source data, pass a dictionary to the
     ``replace`` argument where each key is the boilerplate string and the
@@ -68,7 +68,6 @@ def copy_template_file(src, dest, replace=None):
     data = re.sub(r"(?<=SECRET_KEY = ')'", secret_key + "'", data)
 
     # Create the folder if it does not exist
-    import pdb; pdb.set_trace()
     dest_folder = os.path.dirname(dest)
     if not os.path.exists(dest_folder):
         os.makedirs(dest_folder)
@@ -83,5 +82,9 @@ def copy_template_file(src, dest, replace=None):
     if os.access(dest, os.W_OK):
         st = os.stat(dest)
         new_permissions = stat.S_IMODE(st.st_mode) | stat.S_IWUSR
+        # TODO: Remove this from here, should be managed by setuptoold
+        # Make manage.py executable again:
+        if os.path.basename(dest) == 'manage.py':
+            new_permissions |= stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH
         os.chmod(dest, new_permissions)
 

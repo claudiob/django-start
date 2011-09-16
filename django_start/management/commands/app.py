@@ -11,7 +11,7 @@ class Command(BaseCommand):
     args = "[project_folder]"
 
     TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), 
-        '..', '..', 'templates', 'app', 'default')
+        '..', '..', 'templates', 'app', 'blog')
 
     option_list = BaseCommand.option_list + (
         make_option('--template-dir', action='store', default=TEMPLATE_DIR, 

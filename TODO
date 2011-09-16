@@ -3,3 +3,6 @@
 * Add gems for front-end: sass, minify, etc.
 * Make sure ./django-start.py app is run from within the project/ folder of a Django project
 * Find an alternative to the XXXvariableXXX notation for substitutions
+* Make manage.py executable again after install
+* Exclude .DS_Store from setup.py sdist/bdist
+* Also install virtualenv (may be as an option)

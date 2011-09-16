@@ -1,0 +1,3 @@
+recursive-include django_start/templates *.*
+recursive-exclude django_start/templates *.pyc
+recursive-include django_start/management/commands *.py
