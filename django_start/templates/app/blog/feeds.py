@@ -9,7 +9,7 @@ class PostsFeed(Feed):
     def link(self, obj): return reverse('posts')
 
     def items(self):
-        return Post.objects.published.order_by('-published_on')[:5]
+        return Post.objects.published()[:5]
 
     def item_title(self, item):
         return item.title

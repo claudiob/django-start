@@ -7,7 +7,7 @@
   		{% for post in posts %}
   		<li>
   			<time datetime="{{ post.published_on|date:"c" }}">
-  			  {{ post.published_on|date:"F d - Y" }}</time><br>
+  			  {{ post.published_on|date:"F d, Y" }}</time><br>
   			<a href="{% url post post.slug %}">{{ post.title }}</a><br>
   		</li>
   		{% endfor %}

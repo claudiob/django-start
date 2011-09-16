@@ -18,7 +18,7 @@ class Post(models.Model):
     published_on    = models.DateTimeField(null=True, blank=True, 
       default       = datetime.now(), help_text= 
       "Posts with empty or future date will not appear in the blog.\n" +
-      "Current %s time is: %s.<br>" % (settings.TIME_ZONE, current_time))
+      "Current %s time is: %s.<br>" % (settings.TIME_ZONE, current_time()))
 
 
     class Meta:

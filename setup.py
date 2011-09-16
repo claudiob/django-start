@@ -9,7 +9,7 @@ except ImportError:
 
 setup(
     name='django-start',
-    version='0.1.3',
+    version='0.1.4',
     description='Create a Django project based on FF0000 best practices.',
     author='Claudio Baccigalupo',
     author_email='claudio.baccigalupo@ff0000.com',

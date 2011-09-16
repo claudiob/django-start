@@ -3,7 +3,7 @@
 {% block content %}
 	<article>
 		<time datetime="{{ post.published_on|date:"c" }}">
-		  {{ post.published_on|date:"F d - Y" }}</time><br>
+		  {{ post.published_on|date:"F d, Y" }}</time><br>
 		<h1>{{ post.title }}</h1>
 		{{ post.content|safe }}
 	</article>
