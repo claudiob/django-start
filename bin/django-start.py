@@ -1,9 +1,5 @@
 #!/usr/bin/env python
+from django_start import management
 
-def main():
-    from django_start.management import start_project
-    start_project()
-
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    management.execute_from_command_line()

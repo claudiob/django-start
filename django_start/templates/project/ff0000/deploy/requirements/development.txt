@@ -1,0 +1,7 @@
+#--- Python requirements to be included in DEVELOPMENT ONLY
+#    NOTE: to avoid conflicts, every requirement should include the version
+
+
+#--- Deployment with fabric
+-e git+git://github.com/bitprophet/fabric.git@18d5c3d#egg=fabric
+-e git+git://github.com/ff0000/red-fab-deploy.git@306e904#egg=red-fab-deploy

@@ -1,0 +1,5 @@
+* Add django-pagination and pagination to templates such as index
+* Add middleware to include in every request: DOMAIN, FACEBOOK_APP_ID, TEMPLATE_DEBUG, PAGE
+* Add gems for front-end: sass, minify, etc.
+* Make sure ./django-start.py app is run from within the project/ folder of a Django project
+* Find an alternative to the XXXvariableXXX notation for substitutions

@@ -1,0 +1,12 @@
+[
+    {
+        "pk": 1,
+        "model": "XXXFOLDERXXX.XXXVAR_NAMEXXX",
+        "fields": {
+            "published_on": "2011-07-22 12:56:00",
+            "title": "Here is a XXXSINGULARXXX example",
+            "content": "<p>Here is an <b>example</b>!</p>",
+            "slug": "here-is-an-example"
+        }
+    }
+]

@@ -1,0 +1,82 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js ie ie6" lang="{{LANGUAGE_CODE}}"><![endif]-->
+<!--[if IE 7]><html class="no-js ie ie7" lang="{{LANGUAGE_CODE}}"><![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8" lang="{{LANGUAGE_CODE}}"><![endif]-->
+<!--[if IE 9]><html class="no-js ie ie9" lang="{{LANGUAGE_CODE}}"><![endif]-->
+<!--[if !IE]><!--><html class="no-js" lang="{{LANGUAGE_CODE}}"><!--<![endif]-->
+	<head>
+		<meta charset="utf-8" />
+  	<meta name="google-site-verification" content="XXXGOOGLE_SITE_VERIFICATIONXXX" />
+		<meta name="description" content="{% block pagedescription %}{% endblock pagedescription %}" />
+		<meta name="author" content="XXXADMIN_EMAILXXX" />
+		<meta name="media-url" content="{{ STATIC_URL }}" />
+		
+		<!-- Prefetch your CDN URL: http://j.mp/bplatednsfetch -->
+		<link rel="dns-prefetch" href="{{ STATIC_URL }}" />	
+		<link rel="dns-prefetch" href="//ajax.googleapis.com" />
+		<!-- Media URL -->
+		<link rel="media-url" href="{{ STATIC_URL }}" />
+		<link rel="root-url" href="{{ request.get_host }}" />
+
+		<title>{% block pagetitle %}{% endblock pagetitle %}</title>
+		
+		
+		<!-- Facebook Open Graph -->
+		<meta property="fb:app_id" content="{{ FACEBOOK_APP_ID }}" />
+
+		<meta property="og:title" content="{% block og_title %}{% endblock og_title %}" />
+		<meta property="og:image" content="{% block og_image %}{{ STATIC_URL }}img/logo-small.png{% endblock %}" />
+		<meta property="og:site_name" content="{% block og_site_name %}Legendary Entertainment{% endblock %}" />
+		<meta property="og:description" content="{% block og_description %}{% endblock %}" />
+		
+
+		<!-- Mobile viewport optimized: j.mp/bplateviewport -->
+		<!--meta name="viewport" content="width=ADD WIDTH HERE" /-->
+
+		<!-- CSS: implied media="all" -->
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
+		{% block stylesheet %}{% endblock stylesheet %}
+
+		<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+		<script src="{{ STATIC_URL }}js/libs/modernizr-2.0.4.js"></script>
+	</head>
+	<body>
+		<div id="container">
+			<header>
+  			{% block header %}
+  			{% endblock header %}
+			</header>
+      {% block content %}{% endblock content %}
+			<footer>
+				{% block footer %}
+				{% endblock footer %}
+  		</footer>
+		<div>
+		  
+		  
+		<!-- JavaScript at the bottom for fast page loading -->
+		<div class="hidden scripts">
+			<script>
+				(function () {
+					Modernizr.load([{
+						// jQuery
+						load : "//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js",
+						complete : function () {
+							if (!window.jQuery) {
+								Modernizr.load("{{ STATIC_URL }}js/libs/jquery-1.6.1.min.js");
+							}
+						}
+					}]);
+				}());
+			</script>
+			
+			<!-- Google Analytics -->
+			<script>
+				var _gaq=[['_setAccount','XXXGOOGLE_ANALYTICS_CODEXXX'],['_trackPageview'],['_trackPageLoadTime']];
+				(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+				g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+				s.parentNode.insertBefore(g,s)}(document,'script'));
+			</script>
+		</div>
+	</body>
+</html>
