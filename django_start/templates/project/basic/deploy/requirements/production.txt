@@ -1,0 +1,6 @@
+#--- Python requirements to be included in PRODUCTION ONLY
+#    NOTE: to avoid conflicts, every requirement should include the version
+
+
+#--- Databases
+MySQL-python      == 1.2.3

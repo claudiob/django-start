@@ -1,0 +1,8 @@
+#app_auth, #app_sites {
+    padding: 4px 0px 4px 34px;
+    background-position: 6px center;
+    background-repeat: no-repeat;
+}
+
+#app_auth  {background-image: url(../img/glyphish/auth.png)}
+#app_sites {background-image: url(../img/glyphish/sites.png)}
