@@ -9,11 +9,11 @@ except ImportError:
 
 setup(
     name='django-start',
-    version='0.1.4',
+    version='0.1.5',
     description='Create a Django project based on FF0000 best practices.',
-    author='Claudio Baccigalupo',
+    author='RED Interactive Agency',
     author_email='claudio.baccigalupo@ff0000.com',
-    url='http://github.com/claudiob/django-start/',
+    url='http://github.com/ff0000/django-start/',
     packages=[
         'django_start',
         'django_start.management',

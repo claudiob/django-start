@@ -1,48 +1,31 @@
-============
-DjangoStart
-============
+Django-start installs a script which allows the easy creation of Django 
+projects and applications based the layout used at RED Interactive Agency.
 
-DjangoStart installs a script which allows the easy creation of a standard
-Django project layout based on RED Interactive Agency standards.
+Creating a project
+==================
+  
+    pip install django-start
+    django-start.py project example
+    
+This will use the default project template, which includes 
+[red-boilerplate](https://github.com/ff0000/red-boilerplate).
 
+Running project
+===============
 
-Script usage
-============
-
-After installing DjangoStart, simply run the following command (from within
-the directory in where the new project directory should be created)::
-
-	django-start.py project_name
-
-The script will prompt for values to replace boilerplate variables with. These
-variables allow for both the file contents and path names to be customized to
-this specific project.
-
+    cd example
+    virtualenv env
+    source env/bin/activate
+    cd project
+    python manage.py require
+    python manage.py sync
+    python manage.py server
 
 Using a custom project template
 ===============================
 
 If you would prefer to use a custom project template than the one included in
 this application, create your custom project template directory and call the
-command script like this::
+command script like this:
 
-    django-start.py --template-dir=/your/custom/template project_name
-
-
-Specifying boilerplate variables
---------------------------------
-
-Two optional files in the root of the project template directory are used to
-determine the boilerplate variables:
-
-``djangostart_variables``
-	Each line should contain the boilerplate variable (and optionally, a
-	description of the variable, separated from the variable by white space).
-
-``djangostart_defaults``
-	Each line should contain a variable and the default value, separated by
-	whitespace. If the default value contains ``PROJECT``, it is replaced with
-	the project name.
-
-See the files included in the project_template directory of DjangoStart for
-an example.
+    django-start.py --template-dir=/your/custom/template project new_example

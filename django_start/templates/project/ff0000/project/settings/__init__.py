@@ -14,7 +14,7 @@ ADMIN_MEDIA_PREFIX = '/static-local/admin/'
 ADMIN_MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'static-local', 'admin')
 
 # People who get code error notifications when DEBUG=False
-ADMINS = (('XXXPROJECT_NAMEXXX administrator', 'XXXADMIN_EMAILXXX'),)
+ADMINS = (('__PROJECT_NAME__ administrator', '__ADMIN_EMAIL__'),)
 
 DATABASES = {
     'default': {
@@ -27,10 +27,10 @@ DATABASES = {
 DEBUG = True
 
 # Address to use for various automated correspondence from the site manager(s).
-DEFAULT_FROM_EMAIL = 'XXXADMIN_EMAILXXX'
+DEFAULT_FROM_EMAIL = '__ADMIN_EMAIL__'
 
 # Set the subject prefix for email messages sent to admins and managers
-EMAIL_SUBJECT_PREFIX = '[XXXPROJECT_NAMEXXX] '
+EMAIL_SUBJECT_PREFIX = '[__PROJECT_NAME__] '
 
 # Maximum size (in bytes) before an upload gets streamed to the file system.
 FILE_UPLOAD_MAX_MEMORY_SIZE = 5242880
@@ -39,7 +39,7 @@ FILE_UPLOAD_MAX_MEMORY_SIZE = 5242880
 FIXTURE_DIRS = ()
 
 # The Site Title of your Admin-Interface. Change this instead of changing index.html
-GRAPPELLI_ADMIN_TITLE = "XXXPROJECT_NAMEXXX"
+GRAPPELLI_ADMIN_TITLE = "__PROJECT_NAME__"
 
 # A tuple of strings designating all the enabled applications
 INSTALLED_APPS = (
@@ -93,7 +93,7 @@ NUMBER_GROUPING = 3
 ROOT_URLCONF = 'urls'
 
 # Seed for secret-key hashing algorithms
-SECRET_KEY = ''
+SECRET_KEY = '__SECRET_KEY_SEED__'
 
 # Whether files other than .html should be returned with the correct MIME type
 SET_MIMETYPE = True
