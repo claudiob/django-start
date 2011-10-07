@@ -6,7 +6,7 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "apps"))
 
 # URL prefix for CSS, JavaScript and images used by the Django admin.
-# Use a trailing slash, and to have this be different from MEDIA_URL 
+# Use a trailing slash, and to have this be different from MEDIA_URL
 # For integration with staticfiles, this should be  STATIC_URL + 'admin/'.
 # Make it different to not host on CDN
 ADMIN_MEDIA_PREFIX = '/static-local/admin/'
@@ -18,7 +18,7 @@ ADMINS = (('__PROJECT_NAME__ administrator', '__ADMIN_EMAIL__'),)
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', 
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(PROJECT_ROOT, 'dev.db'),
     }
 }
@@ -31,6 +31,9 @@ DEFAULT_FROM_EMAIL = '__ADMIN_EMAIL__'
 
 # Set the subject prefix for email messages sent to admins and managers
 EMAIL_SUBJECT_PREFIX = '[__PROJECT_NAME__] '
+
+# Enviroment (development, staging, test, production) affects the admin colors
+ENVIRONMENT = 'development' # admin links will be green
 
 # Maximum size (in bytes) before an upload gets streamed to the file system.
 FILE_UPLOAD_MAX_MEMORY_SIZE = 5242880
@@ -62,8 +65,8 @@ INTERNAL_IPS = ('0.0.0.0', '127.0.0.1',)
 # The language code for this installation
 LANGUAGE_CODE = 'en-us'
 
-# If login is successful, the view redirects to the URL specified in next. 
-# If next isn't provided, it redirects to settings.LOGIN_REDIRECT_URL 
+# If login is successful, the view redirects to the URL specified in next.
+# If next isn't provided, it redirects to settings.LOGIN_REDIRECT_URL
 # (which defaults to /accounts/profile/).
 LOGIN_REDIRECT_URL = '/admin'
 
@@ -74,7 +77,7 @@ MANAGERS = ADMINS
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, '..', 'uploads')
 
 # URL that handles the media served from MEDIA_ROOT (must end in a slash)
-MEDIA_URL = '/uploads/' 
+MEDIA_URL = '/uploads/'
 
 # A tuple of middleware classes to use
 MIDDLEWARE_CLASSES = (
@@ -101,7 +104,7 @@ SET_MIMETYPE = True
 # The ID of the current site in the django_site database table
 SITE_ID = 1
 
-# Absolute path to the directory where collectstatic will collect static files 
+# Absolute path to the directory where collectstatic will collect static files
 STATIC_ROOT = ''
 
 # URL to use when referring to static files located in STATIC_ROOT
@@ -118,6 +121,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.request',
+    'ff0000.context_processors.settings',
 )
 
 # Display a detailed report for any TemplateSyntaxError.
@@ -143,7 +147,7 @@ USE_ETAGS = False
 # Display numbers using a thousand separator
 USE_THOUSAND_SEPARATOR = True
 
-# Enable Django's internationalization system 
+# Enable Django's internationalization system
 USE_I18N = True
 
 # Display numbers and dates using the format of the current locale

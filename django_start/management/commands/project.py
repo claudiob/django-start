@@ -3,27 +3,6 @@ from shutil import copytree, ignore_patterns
 from optparse import make_option
 from django_start.management.base import BaseCommand, CommandError
 
-def copy_template_folder(copy_from, copy_to, exclude=[]):
-    """Copy all files in the source path to the destination path."""
-    for copy_from, dirs, files in os.walk(copy_from):
-        relative_path = copy_from[len(copy_from):].lstrip(os.sep)
-        for filename in files:
-            if filename in exclude:
-                continue
-            src_file_path = os.path.join(copy_from, filename)
-            dest_file_path = os.path.join(copy_to, relative_path, filename)
-            copy_template_file(src_file_path, dest_file_path)
-
-def copy_template_file(src, dest):
-    """Copy a file, maintaining its permissions."""
-    if not os.path.exists(os.path.dirname(dest)):
-        os.makedirs(os.path.dirname(dest))
-    with open(src, 'r') as src_file:
-        with open(dest, 'w') as dest_file:
-            dest_file.write(src_file.read())
-    shutil.copymode(src, dest)
-
-
 class Command(BaseCommand):
     help = """Create a Django project from a template.
     

@@ -12,8 +12,13 @@ def after_copy():
     """Steps to run after the templates has been copied in place."""
     # 1. Import red-boilerplate in place using git
     os.system("git init")
+    os.system("git add .")
+    os.system("git commit -m'Django project created with django-start'")
     os.system("git remote add -f boilerplate git://github.com/ff0000/red-boilerplate.git")
     os.system("git pull boilerplate master")
+    os.system("git rm README.md")
+    os.system("git mv INSTRUCTIONS.md README.md")
+    os.system("git commit -m'Restored django-start README.md'")
 
     # 2. Replace boilerplate variables with prompt values or defaults
     placemarks = [
@@ -30,6 +35,8 @@ def after_copy():
     # Also replace SECRET_KEY
     key_seed = ''.join([choice(ascii_lowercase + digits) for x in range(50)])
     replace['__SECRET_KEY_SEED__'] = key_seed
+
+    # WATCH OUT!! This resets permissions!! Change with shutil
 
     for root, dirs, files in os.walk('.'):
         DONT_REPLACE_IN = ['.svn', '.git',]
