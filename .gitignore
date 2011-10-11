@@ -3,3 +3,4 @@ django_start.egg-info
 build
 dist
 .DS_Store
+*.local.py

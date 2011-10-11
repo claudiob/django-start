@@ -34,6 +34,7 @@ class Command(BaseCommand):
             if callable(getattr(django_start_settings, 'after_copy', None)):
                 # First change current directory to copy_to
                 os.chdir(copy_to)
-                django_start_settings.after_copy()
+                no_prompt = options.get('no_prompt', False)
+                django_start_settings.after_copy(no_prompt=no_prompt)
             
         

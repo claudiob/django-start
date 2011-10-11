@@ -75,6 +75,8 @@ class BaseCommand(object):
     option_list = (
         make_option('--traceback', action='store_true',
             help='Print traceback on exception'),
+        make_option('--no-prompt', action='store_true',
+            help='Don\'t prompt for anything, use default settings'),
     )
     help = ''
     args = ''

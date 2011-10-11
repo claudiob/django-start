@@ -8,7 +8,7 @@ import os
 from random import choice
 from string import ascii_lowercase, digits
 
-def after_copy():
+def after_copy(no_prompt=False):
     """Steps to run after the templates has been copied in place."""
     # 1. Import red-boilerplate in place using git
     os.system("git init")
@@ -30,8 +30,11 @@ def after_copy():
         placemark = '__%s__' % var
         replace[placemark] = None
         while not replace[placemark]:
-            prompt = '%s [%s]: ' % (help, default)
-            replace[placemark] = raw_input(prompt) or default
+            if no_prompt:
+                replace[placemark] = default
+            else:
+                prompt = '%s [%s]: ' % (help, default)
+                replace[placemark] = raw_input(prompt) or default
     # Also replace SECRET_KEY
     key_seed = ''.join([choice(ascii_lowercase + digits) for x in range(50)])
     replace['__SECRET_KEY_SEED__'] = key_seed
