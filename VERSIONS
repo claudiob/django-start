@@ -1,3 +1,5 @@
+* 0.1.10:2011/10/11   ./manage.sync loads fixtures based on settings.ENVIRONMENT
+
 * 0.1.9: 2011/10/11   Adds --no-prompt option to use default replacements
 
 * 0.1.8: 2011/10/08   A context processor makes settings available in templates. So we can have different admin link colors based on environment.

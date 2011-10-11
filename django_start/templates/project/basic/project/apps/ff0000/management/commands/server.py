@@ -14,6 +14,6 @@ class Command(BaseCommand):
         """
         system('find . -type f -name "*.pyc" -delete;')
         call_command('runserver', '0.0.0.0:8000')
-        logging.info("Require success")
+        logging.info("Server success")
 
 
