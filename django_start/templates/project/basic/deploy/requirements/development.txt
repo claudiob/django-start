@@ -1,6 +1,8 @@
 #--- Python requirements to be included in DEVELOPMENT ONLY
 #    NOTE: to avoid conflicts, every requirement should include the version
 
+#--- Administration
+docutils          == 0.8.1    
 
 #--- Deployment with fabric
 -e git+git://github.com/bitprophet/fabric.git@18d5c3d#egg=fabric
