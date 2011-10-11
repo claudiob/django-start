@@ -13,28 +13,6 @@
     {{ block.super }}
 {% endblock %}
 
-<!-- CHANGE ADMIN LINKS COLOR BASED ON ENVIRONMENT (adds security) -->
-{% block extrastyle %}
-  {% if settings.ENVIRONMENT == 'development' %}
-  <style>
-    a:link, a:visited {color: #3f9060;}
-    a:hover, a:active {color: #444;}
-  </style>
-  {% endif %}
-  {% if settings.ENVIRONMENT == 'staging' %}
-  <style>
-    a:link, a:visited {color: #bf6030;}
-    a:hover, a:active {color: #444;}
-  </style>
-  {% endif %}
-  {% if settings.ENVIRONMENT == 'production' %}
-  <style>
-    a:link, a:visited {color: #bf0000;}
-    a:hover, a:active {color: #444;}
-  </style>
-  {% endif %}
-{% endblock %}
-
 <!-- COLTYPE/BODYCLASS-- >
 {% block bodyclass %}dashboard{% endblock %}
 {% block content-class %}content-grid{% endblock %}

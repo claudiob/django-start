@@ -1,0 +1,45 @@
+/* Links go green in development */
+
+a:link, a:visited, a.button.toggle-filters:link, a.button.toggle-filters:visited {
+color: #30AE8C;
+}
+
+thead th a:link, thead th a:visited, #header a:link, #header a:visited {
+color: #39B2A9;
+}
+
+a.external:link, a.external:visited {
+color: #83F6A6;
+}
+
+.filter-pulldown, .open a.button.toggle-filters, .open.selected a.button.toggle-filters, .selected a.button.toggle-filters:hover, .selected a.button.toggle-filters:active, a.button.toggle-filters:hover, a.button.toggle-filters:active {
+background: #E1FFC2;
+}
+
+.submit-row a.submit-link, .submit-row input[type="submit"] {
+border: 1px solid #26AF66;
+}
+
+input[type="submit"], .submit-row a.submit-link:link, .submit-row a.submit-link:visited {
+color: white;
+background: #30CE8C;
+background: -moz-linear-gradient(top, #39EDB2, #30CE8C);
+background: -webkit-gradient(linear, left top, left bottom, from(#39EDB2), to(#30CE8C));
+background: -o-linear-gradient(top, #39EDB2, #30CE8C);
+}
+
+
+h1 + .tools a.add-handler:hover, h1 + .tools a.add-handler:active {
+background: #30CE8C 0 50% no-repeat scroll;
+background: #30CE8C 0 50% no-repeat scroll;
+background-image: -moz-linear-gradient(top, #39EDB2, #30CE8C);
+background-image: -webkit-gradient(linear, left top, left bottom, from(#39EDB2), to(#30CE8C));
+background-image: -o-linear-gradient(top, #39EDB2, #30CE8C);
+}
+
+button {
+background: #30CE8C;
+background-image: -moz-linear-gradient(top, #33D999, #30CE8C);
+background-image: -webkit-gradient(linear, left top, left bottom, from(#33D999), to(#30CE8C));
+background-image: -o-linear-gradient(top, #33D999, #30CE8C);
+}

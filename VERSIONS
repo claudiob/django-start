@@ -1,15 +1,17 @@
-* 0.1.10:2011/10/11   ./manage.sync loads fixtures based on settings.ENVIRONMENT
-
-* 0.1.9: 2011/10/11   Adds --no-prompt option to use default replacements
-
-* 0.1.8: 2011/10/08   A context processor makes settings available in templates. So we can have different admin link colors based on environment.
-
-* 0.1.7: 2011/09/21   Replace red-boilerplate README.md with the template one at the end of after_copy on ff0000 project template
-
-* 0.1.6: 2011/09/21   Added 'git commit' at the end of after_copy on ff0000 project template
-
-* 0.1.5: 2011/09/21   Edited ff0000 project template to git import red-boilerplate
-
-* 0.1.4: 2011/09/16   Added (and verified) tutorial steps
-
-* 0.1.3: 2011/09/15   Dramatically changed the management to be able to create both projects and apps by passing the right argument to django-start.py
+* 0.1.11: 2011/10/11   Moves env-based admin colors from inline to separate CSS
+          
+* 0.1.10: 2011/10/11   ./manage.sync loads fixtures based on settings.ENVIRONMENT
+          
+* 0.1.9:  2011/10/11   Adds --no-prompt option to use default replacements
+          
+* 0.1.8:  2011/10/08   A context processor makes settings available in templates. So we can have different admin link colors based on environment.
+          
+* 0.1.7:  2011/09/21   Replace red-boilerplate README.md with the template one at the end of after_copy on ff0000 project template
+          
+* 0.1.6:  2011/09/21   Added 'git commit' at the end of after_copy on ff0000 project template
+          
+* 0.1.5:  2011/09/21   Edited ff0000 project template to git import red-boilerplate
+          
+* 0.1.4:  2011/09/16   Added (and verified) tutorial steps
+          
+* 0.1.3:  2011/09/15   Dramatically changed the management to be able to create both projects and apps by passing the right argument to django-start.py

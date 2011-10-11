@@ -1,0 +1,37 @@
+/* Links go orange in staging */
+
+a:link, a:visited, a.button.toggle-filters:link, a.button.toggle-filters:visited {
+color: #AE6230;
+}
+
+thead th a:link, thead th a:visited, #header a:link, #header a:visited {
+color: #B28139;
+}
+
+a.external:link, a.external:visited {
+color: #F68386;
+}
+
+.filter-pulldown, .open a.button.toggle-filters, .open.selected a.button.toggle-filters, .selected a.button.toggle-filters:hover, .selected a.button.toggle-filters:active, a.button.toggle-filters:hover, a.button.toggle-filters:active {
+background: #FFD9C2;
+}
+
+.submit-row a.submit-link, .submit-row input[type="submit"] {
+border: 1px solid #AF3926;
+}
+
+input[type="submit"], .submit-row a.submit-link:link, .submit-row a.submit-link:visited, button {
+color: white;
+background: #CE5830;
+background: -moz-linear-gradient(top, #ED7639, #CE5830);
+background: -webkit-gradient(linear, left top, left bottom, from(#ED7639), to(#CE5830));
+background: -o-linear-gradient(top, #ED7639, #CE5830);
+}
+
+h1 + .tools a.add-handler:hover, h1 + .tools a.add-handler:active {
+background: #CE5830 0 50% no-repeat scroll;
+background: #CE5830 0 50% no-repeat scroll;
+background-image: -moz-linear-gradient(top, #ED7639, #CE5830);
+background-image: -webkit-gradient(linear, left top, left bottom, from(#ED7639), to(#CE5830));
+background-image: -o-linear-gradient(top, #ED7639, #CE5830);
+}
