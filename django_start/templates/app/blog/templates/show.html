@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<article>
-		<time datetime="{{ post.published_on|date:"c" }}">
-		  {{ post.published_on|date:"F d, Y" }}</time><br>
-		<h1>{{ post.title }}</h1>
-		{{ post.content|safe }}
-	</article>
+  <article>
+    <time datetime="{{ XXXVAR_NAMEXXX.published_on|date:"c" }}">
+      {{ XXXVAR_NAMEXXX.published_on|date:"F d, Y" }}</time><br>
+    <h1>{{ XXXVAR_NAMEXXX.title }}</h1>
+    {{ XXXVAR_NAMEXXX.content|safe }}
+  </article>
 {% endblock %}
 

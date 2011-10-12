@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-  {% if posts %}
-  	<h2>All posts</h2>
-  	<ol>
-  		{% for post in posts %}
-  		<li>
-  			<time datetime="{{ post.published_on|date:"c" }}">
-  			  {{ post.published_on|date:"F d, Y" }}</time><br>
-  			<a href="{% url post post.slug %}">{{ post.title }}</a><br>
-  		</li>
-  		{% endfor %}
-  	</ol>
+  {% if XXXVAR_NAMEXXXs %}
+    <h2>All XXXVAR_NAMEXXXs</h2>
+    <ol>
+      {% for XXXVAR_NAMEXXX in XXXVAR_NAMEXXXs %}
+      <li>
+        <time datetime="{{ XXXVAR_NAMEXXX.published_on|date:"c" }}">
+          {{ XXXVAR_NAMEXXX.published_on|date:"F d, Y" }}</time><br>
+        <a href="{% url XXXVAR_NAMEXXX XXXVAR_NAMEXXX.slug %}">{{ XXXVAR_NAMEXXX.title }}</a><br>
+      </li>
+      {% endfor %}
+    </ol>
   {% else %}
-    <h2>No posts found</h2>
+    <h2>No XXXVAR_NAMEXXXs found</h2>
   {% endif %}
 {% endblock %}

@@ -1,3 +1,5 @@
+* 0.1.12: 2011/10/11   Adds --no-prompt and after_copy() to app as well. 
+
 * 0.1.11: 2011/10/11   Moves env-based admin colors from inline to separate CSS
           
 * 0.1.10: 2011/10/11   ./manage.sync loads fixtures based on settings.ENVIRONMENT

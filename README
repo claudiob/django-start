@@ -1,6 +1,12 @@
 Django-start installs a script which allows the easy creation of Django 
 projects and applications based the layout used at RED Interactive Agency.
 
+In-depth tutorial
+==================
+
+    Available at http://ff0000.github.com/2011/10/django-hands-on-tutorial/
+    
+
 Creating a project
 ==================
   

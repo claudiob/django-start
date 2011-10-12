@@ -1,8 +1,7 @@
-import os
+import os, sys
+from shutil import copytree, ignore_patterns
 from optparse import make_option
 from django_start.management.base import BaseCommand, CommandError
-from django_start.management.utils import copy_template, camelcase_to_underscore
-
 
 class Command(BaseCommand):
     help = """
@@ -21,31 +20,23 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         if len(args) != 1:
             raise CommandError('Indicate the folder name for the app.')
-
-        placemarks = [
-            ['MODEL_NAME', 'Model Name', None],
-        ]
-
-        src = options['template_dir']
+        no_prompt = options.get('no_prompt', False)
+        app_dir = options['template_dir']
         project_folder = args[0]
-        replace = {}
-        for var, help, default in placemarks:
-            placemark = 'XXX%sXXX' % var
-            replace[placemark] = None
-            while not replace[placemark]:
-                prompt = '%s [%s]: ' % (help, default)
-                replace[placemark] = raw_input(prompt) or default
-        # Now add some placemarks based on other ones
-        replace['XXXFOLDERXXX'] = project_folder
-        # if MODEL_NAME: BlogPost then VAR_NAME: blog_post
-        replace['XXXVAR_NAMEXXX'] = camelcase_to_underscore(replace['XXXMODEL_NAMEXXX'])
-        replace['XXXSINGULARXXX'] = replace['XXXVAR_NAMEXXX'].replace('_', ' ')
-        replace['XXXPLURALXXX'] = '%ss' % replace['XXXSINGULARXXX']
-        copy_template("%s/apps" % src, "apps/%s" % project_folder, replace)
-        copy_template("%s/templates" % src, "templates/%s" % project_folder, replace)
-        print "Application %s created. To activate:" % replace['XXXMODEL_NAMEXXX']
-        print "- Add this line to INSTALLED_APPS in your project settings file:"
-        print "\t'%s'," % project_folder
-        print "- Add this line to urlpatterns in your project urls file:"
-        print "\t(r'^%s/', include('%s.urls'))," % (project_folder, project_folder)
-        print "- Synchronize the database"
+        # 1. Copy the <name>/apps into apps/<name>
+        copy_from = os.path.join(app_dir, 'apps')
+        copy_to = os.path.join('apps', project_folder)
+        copytree(copy_from, copy_to)
+        # 1. Copy the <name>/templates into templates/<name>
+        copy_from = os.path.join(app_dir, 'templates')
+        copy_to = os.path.join('templates', project_folder)
+        copytree(copy_from, copy_to)
+        # 2. If template has a settings file, run its after_copy method
+        settings_path = os.path.join(app_dir, 'django_start_settings.py')
+        if os.path.exists(settings_path):
+            sys.path.append(app_dir)
+            import django_start_settings
+            if callable(getattr(django_start_settings, 'after_copy', None)):
+                # Don't change current directory (there are two in this case)
+                django_start_settings.after_copy(no_prompt=no_prompt,
+                    project_folder=project_folder)

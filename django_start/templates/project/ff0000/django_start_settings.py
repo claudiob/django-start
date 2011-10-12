@@ -40,7 +40,7 @@ def after_copy(no_prompt=False):
     replace['__SECRET_KEY_SEED__'] = key_seed
 
     # WATCH OUT!! This resets permissions!! Change with shutil
-
+    # TODO: Also replace variables in file names
     for root, dirs, files in os.walk('.'):
         DONT_REPLACE_IN = ['.svn', '.git',]
         for folder in DONT_REPLACE_IN:
